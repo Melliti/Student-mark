@@ -18,7 +18,8 @@
             <TextField fx:id="tName" layoutX="167.0" layoutY="68.0" onAction="#submitStudent" />
             <TextField fx:id="tMarks" layoutX="167.0" layoutY="98.0" onAction="#submitStudent" />
             <TextArea fx:id="texta" layoutX="28.0" layoutY="250.0" prefHeight="200.0" prefWidth="442.0" />
-            <Button layoutX="278.0" layoutY="130.0" mnemonicParsing="false" onAction="#submitStudent" text="Add" />
+            <Button layoutX="167.0" layoutY="135.0" mnemonicParsing="false" onAction="#submitStudent" text="Add" />
+            <Button layoutX="211.0" layoutY="135.0" mnemonicParsing="false" onAction="#exportCSV" prefHeight="25.0" prefWidth="104.0" text="Export" />
          </children>
       </AnchorPane>
    </children>
