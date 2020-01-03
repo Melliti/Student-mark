@@ -20,6 +20,7 @@
             <TextArea fx:id="texta" layoutX="28.0" layoutY="250.0" prefHeight="200.0" prefWidth="442.0" />
             <Button layoutX="167.0" layoutY="135.0" mnemonicParsing="false" onAction="#submitStudent" text="Add" />
             <Button layoutX="211.0" layoutY="135.0" mnemonicParsing="false" onAction="#exportCSV" prefHeight="25.0" prefWidth="104.0" text="Export" />
+            <Button layoutX="167.0" layoutY="165.0" mnemonicParsing="false" onAction="#importCSV" prefHeight="25.0" prefWidth="148.0" text="Import" />
          </children>
       </AnchorPane>
    </children>

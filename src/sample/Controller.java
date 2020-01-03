@@ -40,6 +40,18 @@ public class Controller {
         return (0);
     }
 
+    @FXML
+    private int importCSV() {
+        Window importWindow = new Stage();
+        FileChooser fileChooser = new FileChooser();
+        FileChooser.ExtensionFilter extensionFilter = new FileChooser.ExtensionFilter("CSV file (*.csv)", "*.csv");
+        fileChooser.getExtensionFilters().add(extensionFilter);
+        File file = fileChooser.showOpenDialog(importWindow);
+        if (file != null)
+            System.out.println("toto");
+        return (0);
+    }
+
     private void saveFile(String data, File file) {
         try {
             FileWriter fileWriter = null;
