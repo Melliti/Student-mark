@@ -1,6 +1,5 @@
 package sample;
 
-import com.sun.glass.ui.CommonDialogs;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -13,14 +12,27 @@ import java.io.*;
 public class Controller {
     public TextField tName;
     public TextField tMarks;
-
     public TextArea texta;
+
+    private int studentExist(String newName) {
+        String[] list = texta.getText().split("\n");
+
+        for (String s : list) {
+            String[] savedName = s.split(",");
+            if (savedName[0].equals(newName))
+                return (0);
+        }
+        return (1);
+    }
+
     @FXML
     private int submitStudent () {
         if (tMarks.getText().equals("") || tName.getText().equals(""))
             return (-1);
-        texta.appendText(tName.getText() + "," );
-        texta.appendText(tMarks.getText() + "\n" );
+        if (studentExist(tName.getText()) == 1) {
+            texta.appendText(tName.getText() + "," );
+            texta.appendText(tMarks.getText() + "\n" );
+        }
         return (0);
     }
 
