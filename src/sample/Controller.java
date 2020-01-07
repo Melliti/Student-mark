@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class Controller {
     public TextField tName;
@@ -25,6 +26,19 @@ public class Controller {
         return (1);
     }
 
+    private void averageMark() {
+        int sum = 0;
+        String[] lines = texta.getText().split("\n");
+        ArrayList<Integer> values = new ArrayList<Integer>();
+        for (String line: lines) {
+            values.add(Integer.parseInt(line.split(",")[1]));
+        }
+        for (int i = 0; i < values.size(); i++) {
+            sum += values.get(i);
+        }
+        System.out.println(sum / values.size());
+    }
+
     @FXML
     private int submitStudent () {
         if (tMarks.getText().equals("") || tName.getText().equals(""))
@@ -32,6 +46,7 @@ public class Controller {
         if (studentExist(tName.getText()) == 1) {
             texta.appendText(tName.getText() + "," );
             texta.appendText(tMarks.getText() + "\n" );
+            averageMark();
         }
         return (0);
     }
